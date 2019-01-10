@@ -341,7 +341,7 @@ tstBase.Helpers = (function($){
      * @param {String} s
      * */
     var log = function(s) {
-        if(droplet.DEBUGGING && droplet.SHOWLOG) {
+        if(tstBase.DEBUGGING && tstBase.SHOWLOG) {
             if(window.console) {
                 console.log(s);
             }
