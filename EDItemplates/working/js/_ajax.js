@@ -38,9 +38,10 @@
 
             // prepare payload
             let post = {
-                method :method,
-                data:data
+                method :method
             };
+
+            post = buildPostData(post, data);
 
             // make the request
     	    return $.ajax({
@@ -105,10 +106,16 @@
             });    
         };
         /** 
-         * converts an object into a URL string
+         * ASP can't use nested array's in POST data
+         * this puts all the data into a single thread
          * */
-        var buildPostData = function(post) {
+        var buildPostData = function(post, data) {
+        	
+        	$.each(data,function(k,v) {
+        		post[k] = v;
+        	});
 
+        	return post;
         }
     	return {
     		init:init,
