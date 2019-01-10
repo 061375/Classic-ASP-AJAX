@@ -1,5 +1,5 @@
 var tstBase = {
-	ajaxurl:ajax.asp,
+	ajaxurl:'asp/ajax.asp',
 	DEBUGGING:true,
 	ISERRORING:false
 };
