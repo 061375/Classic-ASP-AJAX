@@ -14,7 +14,7 @@
          * this functions sole purpose is to send data to asp and get a response
          * */
         var ajaxtest = function() {
-            tstBase.Ajax.get('ajaxtest',{
+            tstBase.Ajax.get('AjaxTest',{
                 a:'this is a',
                 b:'this is b',
                 c:'this is c'
