@@ -1,0 +1,79 @@
+/** 
+ * Some common mixins
+ * */
+/**  
+ * a wrapper for transitions
+ * @param string $s a float point number in second(s) - default .6s
+ * */
+/** 
+ * media query break wrapper
+ * @param string $width - 768px
+ * */
+/** 
+ * wrapper to export common browser prefix for backward compatability
+ * @param array $declarations the list of styles
+ * @param list $prefixes list of prefixes to use
+ * */
+/** 
+ * wrapper for keyframe animations
+ * @param string name of the animation
+ * */
+/** 
+ * force not allow mouse selection of wrapped text
+ * */
+/* line 4, ../working/sass/style.scss */
+body, html {
+  background: #808080;
+  padding: 0;
+  margin: 0;
+  font-family: Verdana;
+  box-sizing: content-box; }
+
+/* line 11, ../working/sass/style.scss */
+a {
+  color: #000000; }
+
+/* line 14, ../working/sass/style.scss */
+a:visited {
+  color: #000000; }
+
+/* line 17, ../working/sass/style.scss */
+.clear {
+  clear: both; }
+
+/* line 20, ../working/sass/style.scss */
+#container {
+  width: 930px;
+  margin: auto;
+  padding: 0;
+  background: #fff; }
+
+/* line 26, ../working/sass/style.scss */
+header {
+  background: #3366cc;
+  padding-top: 36px; }
+  /* line 29, ../working/sass/style.scss */
+  header div {
+    background: #fff;
+    padding: 10px; }
+
+/* line 34, ../working/sass/style.scss */
+.menu {
+  width: 120px;
+  float: left;
+  min-height: 90vh; }
+
+/* line 39, ../working/sass/style.scss */
+.body {
+  width: 700px;
+  float: left;
+  padding: 0 50px; }
+
+/* line 45, ../working/sass/style.scss */
+h3.title {
+  background: #3366cc;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 3px;
+  font-size: 12px; }
