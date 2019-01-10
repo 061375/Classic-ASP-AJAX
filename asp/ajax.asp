@@ -44,7 +44,7 @@ End Function
 ' @param String Message
 ' @return Void
 Function AjaxResponse(ByVal Success, ByVal Message)
-	Response.Write("{"&Quote&"success"&Quote&":"&Success&","&Quote&"message"&Quote&":"&Quote&""&Message&""&Quote&"}")
+	Response.Write("{"&Quote&"success"&Quote&":"&Success&","&Quote&"message"&Quote&":"&Message&"}")
 End Function
 
 
@@ -57,7 +57,7 @@ Function AjaxTest()
 	a = Request.Form("a")
 	b = Request.Form("b")
 	c = Request.Form("c")
-	sResponse = "The post data contains: "&a&","&b&","&c&"."
+	sResponse = ""&Quote&"The post data contains: "&a&","&b&","&c&"."&Quote&""
 	iSuccess = 1
 End Function
 ' simple example
