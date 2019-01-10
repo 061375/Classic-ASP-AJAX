@@ -22,13 +22,73 @@
 				<div id="lineitems">
 					
 				</div>
+				<div id="ajaxresponse">
+					
+				</div>
 			</div>
 			<div class="clear"></div>
 		</div>
-		<script
-  src="https://code.jquery.com/jquery-2.2.4.min.js"
-  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-  crossorigin="anonymous"></script>
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  				integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  				crossorigin="anonymous"></script>
+
+		<!-- a simple library to make the Ajax call -->
   		<script src="EDItemplates/js/script.js"></script>
+
+		<script>
+			/** 
+			 * This is all you need to make an ajax call using my simple library
+			 * It bootstraps tstBase
+			 * 
+			 * The config has the path to the ajax.asp bootstrapper but you can override it here in the init()
+			 * Example:
+
+			 	var init = function() { 
+			 		tstBase.ajaxurl = "path/to/my/ajax.asp";
+			 	}
+
+			* */
+			(function ( $ ,tstBase) { 
+			    /** 
+			     * @class EDItemplate
+			     * @bindings tstBase, jQuery
+			     * @author Jeremy Heminger <contact@jeremyheminger.com>
+			     * @version 1.0.0
+			     * */
+			    tstBase.EDItemplate = (function($){
+
+			    	var init = function() {
+			            tstBase.Helpers.log('tstBase.EDItemplate.init');
+			    	}
+			        /** 
+			         * this functions sole purpose is to send data to asp and get a response
+			         * */
+			        var ajaxtest = function() {
+			            tstBase.Ajax.get('AjaxTest',{
+			                a:'this is a',
+			                b:'this is b',
+			                c:'this is c'
+			            },function(data){
+			                console.log(data);
+			                $('#ajaxresponse').html(data);
+			            });
+			        }
+			    	return {
+			    		init:init,
+			            ajaxtest:ajaxtest
+			    	}
+			    })(jQuery);
+			}( jQuery, tstBase )); 
+			/** 
+			 * call the above code when the browser is ready
+			 * */
+			jQuery(document).ready(function(){
+				tstBase.EDItemplate.init();
+				tstBase.EDItemplate.ajaxtest();
+			}); 
+
+		</script>
+
 	</body>
 </html>
