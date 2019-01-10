@@ -25,6 +25,9 @@
 				<div id="ajaxresponse">
 					
 				</div>
+				<div id="ajaxresponse2">
+					
+				</div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -74,9 +77,27 @@
 			                $('#ajaxresponse').html('<h4>Ajax Response:</h4>'+data);
 			            });
 			        }
+			        /** 
+			         * this functions sole purpose is to send data to asp and get a response
+			         * */
+			        var ajaxtestdict = function() {
+			            tstBase.Ajax.get('AjaxTestDict',{
+			                a:'this is a',
+			                b:'this is b',
+			                c:'this is c'
+			            },function(data){
+			                console.log(data);
+			                let re = "";
+			                $.each(data,function(k,v){
+			                	re += k+" = "+v+"<br />";
+			                });
+			                $('#ajaxresponse2').html('<h4>Ajax Dictionary Response:</h4>'+re);
+			            });
+			        }
 			    	return {
 			    		init:init,
-			            ajaxtest:ajaxtest
+			            ajaxtest:ajaxtest,
+			            ajaxtestdict:ajaxtestdict
 			    	}
 			    })(jQuery);
 			}( jQuery, tstBase )); 
@@ -86,6 +107,7 @@
 			jQuery(document).ready(function(){
 				tstBase.EDItemplate.init();
 				tstBase.EDItemplate.ajaxtest();
+				tstBase.EDItemplate.ajaxtestdict();
 			}); 
 
 		</script>
